@@ -1651,6 +1651,18 @@ class ZiGate(object):
             cmd = 0x0094
             data = struct.pack('!BHBBBB', 2, addr, 1, endpoint, effect, gradient)
         return self.send_data(cmd, data)
+    
+    def action_onoff_group(self, addr, onoff):
+        '''
+        On/Off action
+        onoff : 0 - OFF
+                1 - ON
+                2 - Toggle
+        '''
+        addr = self.__addr(addr)
+        data = struct.pack('!BHBBB', 1, addr, 1, 0, onoff)
+        cmd = 0x0092
+        return self.send_data(cmd, data)
 
     @register_actions(ACTIONS_LEVEL)
     def action_move_level(self, addr, endpoint, onoff=OFF, mode=0, rate=0):
