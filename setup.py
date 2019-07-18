@@ -18,37 +18,27 @@ from distutils.util import convert_path
 from os import path
 
 here = path.abspath(path.dirname(__file__))
-
 # Get __version without load zigate module
 main_ns = {}
 version_path = convert_path('zigate/version.py')
 with open(version_path) as version_file:
     exec(version_file.read(), main_ns)
-
-# Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
-
 # Setup part
 setup(
-    name='zigate',
+    name='z-dev-jsl1',
     version=main_ns['__version__'],
-    description='python library for the zigate gateway (zigbee) http://zigate.fr',
-    long_description=long_description,
-    long_description_content_type='text/markdown',
-    url='https://github.com/doudz/zigate',
-    author='Sébastien RAMAGE',
-    author_email='sebastien.ramage@gmail.com',
+    url='https://github.com/jsl-1/',
+    author='Jsl-1',
 
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
     ],
 
-    keywords='zigate zigbee python3',
+    keywords='',
     packages=['zigate'],
     include_package_data=True,
 
@@ -65,8 +55,7 @@ setup(
     python_requires='>=3',
 
     project_urls={
-        'Bug Reports': 'https://github.com/doudz/zigate/issues',
-        'Source': 'https://github.com/doudz/zigate/',
+        'Source': 'https://github.com/jsl-1/',
     },
     test_suite='tests',
 )
